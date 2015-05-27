@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Base Navigation Controller-->
+        <scene sceneID="DmT-sU-Fz0">
+            <objects>
+                <navigationController id="dUf-Zp-VuS" customClass="TYBaseNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5J7-NI-SD2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L9N-kF-QUx" kind="relationship" relationship="rootViewController" id="SSM-Kb-fza"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x9C-3B-hrw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-596" y="327"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="K5A-UT-LtF">
+            <objects>
+                <viewController id="L9N-kF-QUx" customClass="TYHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H7g-55-VY7"/>
+                        <viewControllerLayoutGuide type="bottom" id="HC1-6I-ado"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JSc-y3-d9r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOD-Lk-K3F" customClass="TYHomeMonthBar">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.24673622532894737" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="agd-Ht-csg"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDm-L8-5ND" customClass="TYHomeScrollView">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MDm-L8-5ND" firstAttribute="top" secondItem="QOD-Lk-K3F" secondAttribute="bottom" id="10K-VZ-SK0"/>
+                            <constraint firstItem="QOD-Lk-K3F" firstAttribute="leading" secondItem="JSc-y3-d9r" secondAttribute="leading" id="9Ps-aG-jT6"/>
+                            <constraint firstItem="HC1-6I-ado" firstAttribute="top" secondItem="MDm-L8-5ND" secondAttribute="bottom" id="U0f-2R-78d"/>
+                            <constraint firstItem="MDm-L8-5ND" firstAttribute="leading" secondItem="JSc-y3-d9r" secondAttribute="leading" id="VJx-tk-zR3"/>
+                            <constraint firstAttribute="trailing" secondItem="QOD-Lk-K3F" secondAttribute="trailing" id="WsP-wj-Sfo"/>
+                            <constraint firstAttribute="trailing" secondItem="MDm-L8-5ND" secondAttribute="trailing" id="gC5-jq-wob"/>
+                            <constraint firstItem="QOD-Lk-K3F" firstAttribute="top" secondItem="H7g-55-VY7" secondAttribute="bottom" id="gFY-09-lhZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bvG-KR-TgR">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uPR-Qc-cS7">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="日期">
+                                <color key="titleColor" red="0.59031694915416044" green="1" blue="0.38357496519499157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="pressedTitleButton:" destination="L9N-kF-QUx" eventType="touchUpInside" id="UMk-pS-fn5"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bottomScrollView" destination="MDm-L8-5ND" id="TwZ-ez-UiO"/>
+                        <outlet property="titleButton" destination="uPR-Qc-cS7" id="Lon-Me-cwf"/>
+                        <outlet property="topBar" destination="QOD-Lk-K3F" id="bQ5-Pn-IIp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DO3-1R-SXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="329"/>
+        </scene>
+    </scenes>
+</document>
