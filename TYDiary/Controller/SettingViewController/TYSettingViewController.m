@@ -1,28 +1,27 @@
 //
-//  TYLockViewController.m
+//  TYSettingViewController.m
 //  TYDiary
 //
-//  Created by taoYe on 15/5/12.
+//  Created by taoYe on 15/5/30.
 //  Copyright (c) 2015年 renyuxian. All rights reserved.
 //
 
-#import "TYLockViewController.h"
-#import "TYLockView.h"
+#import "TYSettingViewController.h"
 
-@interface TYLockViewController ()
-@property (weak, nonatomic) IBOutlet TYLockView *lockView;
-@property (weak, nonatomic) IBOutlet UIImageView *lockImageView;
+@interface TYSettingViewController ()
 
 @end
 
-@implementation TYLockViewController
+@implementation TYSettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

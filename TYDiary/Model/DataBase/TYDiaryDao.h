@@ -14,21 +14,26 @@
 
 + (instancetype)sharedDao;
 
-- (void)selectNoteWithID:(NSInteger)ID action:(void(^)(TYDiary *note))action;
+- (void)selectDiarysWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day action:(void(^)(TYDiary *diary))action;
+- (void)selectDiarysWithYear:(NSInteger)year month:(NSInteger)month action:(void (^)(NSArray *diarys))action;
+- (void)selectDiarysWithYear:(NSInteger)year action:(void (^)(NSArray *diarys))action;
 
-- (void)selectNoteWithTitle:(NSString *)title action:(void(^)(TYDiary *note))action;
+- (void)selectDiaryWithID:(NSInteger)ID year:(NSInteger)year action:(void(^)(TYDiary *diary))action;
 
-- (void)selectNotesWithTitle:(NSString *)title action:(void (^)(NSArray *notes))action;
+- (void)selectDiaryWithTitle:(NSString *)title year:(NSInteger)year action:(void(^)(TYDiary *diary))action;
 
-- (void)insertDiaryWithID:(NSInteger)ID title:(NSString *)title contentStr:(NSString *)contentStr videoPagth:(NSString *)videoPath imageURL:(NSString *)imageURL drawImageURL:(NSString *)drawImageURL audioURL:(NSString *)audioURL action:(void (^)(TYDiary *))action ;
+- (void)selectDiarysWithTitle:(NSString *)title year:(NSInteger)year action:(void (^)(NSArray *))action;
 
-- (BOOL)deleteWithNoteTitle:(NSString *)title;
+- (void)insertDiaryWithDiary:(TYDiary *)diary year:(NSInteger)year action:(void (^)(NSError * error))action;
 
-- (BOOL)deleteWithNoteID:(NSInteger)ID;
+- (BOOL)deleteWithDiaryTitle:(NSString *)title year:(NSInteger)year;
 
-- (BOOL)updateNoteWithNoteTitle:(NSString *)title note:(TYDiary *)note;
-- (BOOL)updateNoteWithNoteID:(NSInteger)ID note:(TYDiary *)note;
+- (BOOL)deleteWithDiaryID:(NSInteger)ID year:(NSInteger)year;
 
-- (NSArray *)getAllNotes;
+- (BOOL)updateDiaryWithDiaryTitle:(NSString *)title year:(NSInteger)year diary:(TYDiary *)diary;
+
+- (BOOL)updateDiaryWithDiaryID:(NSInteger)ID year:(NSInteger)year diary:(TYDiary *)diary;
+
+- (NSArray *)getAllDiarys;
 
 @end

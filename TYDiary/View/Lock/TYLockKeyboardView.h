@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^TYLockAction)(int number);
+typedef void (^TYLockAction)(NSInteger number);
 
 @interface TYLockKeyboardView : UIView
+
+- (void)setTouchKeyboardAction:(TYLockAction)action;
 
 @end

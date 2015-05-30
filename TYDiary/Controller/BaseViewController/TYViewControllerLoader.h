@@ -9,26 +9,20 @@
 #import "TYObject.h"
 #import <UIKit/UIKit.h>
 
+@class TYLockViewController, TYHomeViewController;
+
 @interface TYViewControllerLoader : TYObject
-
-+ (void)loadResgiterEntry;
-
-+ (void)loadMainEntry;
-
-+ (void)loadWelcomeViewController;
-
-+ (void)layout;
 
 + (UIStoryboard *)welcomeStoryboard;
 
-+ (UIStoryboard *)homeStoryboard;
++ (UIStoryboard *)commonStoryboard;
 
-+ (UIStoryboard *)drawStoryboard;
++ (UIStoryboard *)diaryStroyboard;
 
-+ (UIStoryboard *)videoStoryboard;
++ (UIStoryboard *)launchScreenStroyboard;
 
-+ (UIStoryboard *)registerStoryboard;
++ (TYLockViewController *)lockViewController;
 
-+ (UIStoryboard *)noteStoryboard;
++ (TYHomeViewController *)homeViewController;
 
 @end

@@ -10,7 +10,12 @@
 
 #import "TYLockView.h"
 
-@interface TYLockView () <UITextFieldDelegate>
+@interface TYLockView ()
+
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+@property (weak, nonatomic) IBOutlet UIButton *btn3;
+@property (weak, nonatomic) IBOutlet UIButton *btn4;
 
 
 @end

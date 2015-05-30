@@ -20,6 +20,12 @@
 
 @property (assign, nonatomic) long long diaryID;
 
-@property (copy, nonatomic) NSString *wirteTimestamp;//
+@property (copy, nonatomic) NSString *wirteTimestamp;//写入日期
+
+@property (assign, nonatomic) NSInteger year;
+
+@property (assign, nonatomic) NSInteger month;
+
+@property (assign, nonatomic) NSInteger day;
 
 @end

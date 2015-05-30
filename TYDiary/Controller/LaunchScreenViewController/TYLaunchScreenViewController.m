@@ -8,6 +8,7 @@
 
 #import "TYLaunchScreenViewController.h"
 #import "TYViewControllerLoader.h"
+#import "TYViewControllerManager.h"
 
 static NSString *__launchScreenKey = @"launchScreen";
 static NSString *__noFirstLoginKey = @"noFirstLogin";
@@ -36,16 +37,16 @@ static NSString *__noFirstLoginKey = @"noFirstLogin";
         _shareStorage = [TYShareStorage shareStorage];
             TYAccount *account = [_shareStorage account];
             if (account) {
-                return [TYViewControllerLoader loadMainEntry];
+                return [TYViewControllerManager loadMainEntry];
             }
         if (![[NSUserDefaults standardUserDefaults] integerForKey:__noFirstLoginKey]) {
             [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:__noFirstLoginKey];
             [[NSUserDefaults standardUserDefaults] synchronize];
-             [TYViewControllerLoader loadWelcomeViewController];
+             [TYViewControllerManager loadWelcomeViewController];
             return;
         }
         
-        [TYViewControllerLoader loadResgiterEntry];
+        [TYViewControllerManager loadResgiterEntry];
     });
 }
 

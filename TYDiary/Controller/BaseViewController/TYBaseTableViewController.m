@@ -24,6 +24,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)dealloc {
+    [TYDebugLog debugFormat:@"%@ -> alloc", self];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

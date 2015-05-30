@@ -10,6 +10,5 @@
 #define TYHomework_TYCommonString_h
 
 #define TYDataBaseComponent @"TY-dataBase.db"
-#define TYStoragePathComponent @"TY-storage"
-
+#define TYStoragePathComponent @"TY-diary-storage"
 #endif

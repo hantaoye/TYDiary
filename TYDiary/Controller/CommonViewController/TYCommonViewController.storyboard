@@ -9,7 +9,7 @@
         <!--Lock View Controller-->
         <scene sceneID="dsm-al-3Mu">
             <objects>
-                <viewController id="3WW-ai-rJq" customClass="TYLockViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TYLockViewController" id="3WW-ai-rJq" customClass="TYLockViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dmj-q2-7rO"/>
                         <viewControllerLayoutGuide type="bottom" id="dcq-er-CsI"/>
@@ -216,6 +216,10 @@
                             <constraint firstAttribute="centerX" secondItem="hH9-6c-bZQ" secondAttribute="centerX" id="rVn-64-LkD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lockImageView" destination="OxA-a6-F6J" id="3cG-6l-9V1"/>
+                        <outlet property="lockView" destination="hH9-6c-bZQ" id="ZcH-WW-B89"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vf4-PE-qOw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

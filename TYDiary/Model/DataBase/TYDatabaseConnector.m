@@ -56,21 +56,14 @@
 
 - (instancetype)initWithPath:(NSString *)path name:(NSString *)name {
     if (self = [super init]) {
-        NSError *error = nil;
-        if (![[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error]) {
-            NSLog(@"%@", [error localizedDescription]);
-        }
         NSString *fullPath = [path stringByAppendingPathComponent:name];
         _queue = [[FMDatabaseQueue alloc] initWithPath:fullPath];
-        [[_queue database] setTraceExecution:[[[NSBundle mainBundle] infoDictionary][@"RSStoreKitConnectorEnableDebug"] boolValue]];
-        NSLog(@"%@", path);
+        [[_queue database] setTraceExecution:YES];
+        [[_queue database] setLogsErrors:YES];
+        [TYDebugLog debug:path];
     }
     return self;
 }
-
-//- (instancetype)initWithStorage:(TYStorage *)storage name:(NSString *)name {
-//    return [self initWithPath:[storage path] name:name];
-//}
 
 - (void)dealloc {
     [_queue close];

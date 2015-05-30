@@ -8,14 +8,14 @@
 
 #import "TYDiaryMapper.h"
 #import <FMDB/FMDB.h>
-#import "TYNote.h"
+#import "TYDiary.h"
 @implementation TYDiaryMapper
 
 - (id)rowMapperWithResultSet:(FMResultSet *)resultSet {
-    NSData *data = [resultSet objectForColumnName:@"note"];
-    TYNote *note = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    note.ID = [resultSet intForColumn:@"id"];
-    return note;
+    NSData *data = [resultSet objectForColumnName:@"diary"];
+    TYDiary *diary = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    diary.diaryID = [resultSet intForColumn:@"id"];
+    return diary;
 }
 
 @end

@@ -17,7 +17,6 @@
 
 static NSString *__accountKey = @"accountKey";
 static NSString *__diaryKey = @"diaryKey";
-
 static NSString *__pathKey = @"pathKey";
 
 @interface TYShareStorage ()

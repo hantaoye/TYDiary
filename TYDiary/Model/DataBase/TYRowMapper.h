@@ -11,7 +11,6 @@
 @class FMResultSet;
 @protocol TYRowMapper <NSObject>
 @required
-+ (instancetype)alloc;
 - (id)rowMapperWithResultSet:(FMResultSet *)resultSet;
 @end
 

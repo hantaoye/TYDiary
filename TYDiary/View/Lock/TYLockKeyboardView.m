@@ -10,6 +10,8 @@
 
 @interface TYLockKeyboardView ()
 
+@property (copy, nonatomic) TYLockAction action;
+
 @property (strong, nonatomic) NSMutableArray *buttons;
 
 @end
@@ -30,6 +32,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [TYDebugLog debugFormat:@"%@ dealloc", self];
+}
+
 - (void)setActions {
     for (UIView *view in self.subviews) {
         if ([view isKindOfClass:[UIButton class]]) {
@@ -40,9 +46,13 @@
 }
 
 - (void)pressedBtn:(UIButton *)btn {
-
+    if (_action) {
+        _action(btn.tag);
+    }
 }
 
-
+- (void)setTouchKeyboardAction:(TYLockAction)action {
+    _action = [action copy];
+}
 
 @end

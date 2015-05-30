@@ -9,39 +9,18 @@
 #import "TYViewControllerLoader.h"
 #import "TYHomeViewController.h"
 
+static NSString *__lockVCIdentifier = @"TYLockViewController";
+static NSString *__homeVCIdentifier = @"TYHomeViewController";
+
 @implementation TYViewControllerLoader
 
-+ (void)loadRootVC:(UIViewController *)rootVC {
-    if (!rootVC) return;
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    if (![NSThread isMainThread]) {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            window.rootViewController = rootVC;
-            [window makeKeyAndVisible];
-        });
-    } else {
-        window.rootViewController = rootVC;
-        [window makeKeyAndVisible];
-    }
++ (TYLockViewController *)lockViewController {
+    TYLockViewController *lockViewController = [[self commonStoryboard] instantiateViewControllerWithIdentifier:__lockVCIdentifier];
+    return lockViewController;
 }
 
-+ (void)loadMainEntry {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TYHomeViewController" bundle:nil];
-    [self loadRootVC:[mainStoryboard instantiateInitialViewController]];
-}
-
-+ (void)loadWelcomeViewController {
-    UIStoryboard *welcomeStoryboard = [UIStoryboard storyboardWithName:@"WelcomeViewController" bundle:nil];
-    [self loadRootVC:[welcomeStoryboard instantiateViewControllerWithIdentifier:@"TYWelcomeViewController"]];
-}
-
-+ (void)loadResgiterEntry {
-    UIStoryboard *registerStoryboard = [UIStoryboard storyboardWithName:@"RSRegisterViewController" bundle:nil];
-    [self loadRootVC:[registerStoryboard instantiateInitialViewController]];
-}
-
-+ (void)layout {
-    [self loadResgiterEntry];
++ (TYHomeViewController *)homeViewController {
+    return [[self diaryStroyboard] instantiateViewControllerWithIdentifier:__homeVCIdentifier];
 }
 
 + (UIStoryboard *)welcomeStoryboard {
@@ -53,46 +32,29 @@
     return stoyrboard;
 }
 
-+ (UIStoryboard *)homeStoryboard {
++ (UIStoryboard *)commonStoryboard {
     static UIStoryboard *stoyrboard = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        stoyrboard = [UIStoryboard storyboardWithName:@"TYHomeViewController" bundle:nil];
-    });
-    return stoyrboard;
-}
-+ (UIStoryboard *)registerStoryboard {
-    static UIStoryboard *stoyrboard = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        stoyrboard = [UIStoryboard storyboardWithName:@"RSRegisterViewController" bundle:nil];
+        stoyrboard = [UIStoryboard storyboardWithName:@"TYCommonViewController" bundle:nil];
     });
     return stoyrboard;
 }
 
-+ (UIStoryboard *)drawStoryboard {
++ (UIStoryboard *)diaryStroyboard {
     static UIStoryboard *stoyrboard = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        stoyrboard = [UIStoryboard storyboardWithName:@"TYDrawViewController" bundle:nil];
+        stoyrboard = [UIStoryboard storyboardWithName:@"TYBaseDiaryController" bundle:nil];
     });
     return stoyrboard;
 }
 
-+ (UIStoryboard *)videoStoryboard {
++ (UIStoryboard *)launchScreenStroyboard {
     static UIStoryboard *stoyrboard = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        stoyrboard = [UIStoryboard storyboardWithName:@"RSTrackViewController" bundle:nil];
-    });
-    return stoyrboard;
-}
-
-+ (UIStoryboard *)noteStoryboard {
-    static UIStoryboard *stoyrboard = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        stoyrboard = [UIStoryboard storyboardWithName:@"NoteViewController" bundle:nil];
+        stoyrboard = [UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil];
     });
     return stoyrboard;
 }
