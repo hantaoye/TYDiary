@@ -91,7 +91,6 @@ static NSString *TYDrawImageKey = @"com.TY.DrawImage";
     return path;
 }
 
-
 + (UIImage *)getImageForPath:(NSString *)path {
     if (path) {
         UIImage *image = [[[self helper] blurImageCache] imageFromDiskCacheForKey:path];

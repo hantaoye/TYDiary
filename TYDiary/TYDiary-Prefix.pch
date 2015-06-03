@@ -21,4 +21,5 @@
 #import "TYDebugLog.h"
 #import "TYShareStorage.h"
 #import "TYThread.h"
+#import "TYDate.h"
 #endif

@@ -20,10 +20,12 @@ typedef NS_ENUM(NSInteger, TYDiaryWeatherType) {
 
 @property (copy, nonatomic) NSString *temperature; //温度
 
-@property (copy, nonatomic) NSDate *date;
+//@property (copy, nonatomic) NSDate *date;
 
 @property (copy, nonatomic) NSString *videopath;
 
 @property (copy, nonatomic) NSString *audioPath;
+
+- (instancetype)initWithTitle:(NSString *)title content:(NSString *)content imageLocalPath:(NSString *)imageLocalPath year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day wirteTimestamp:(NSString *)wirteTimestamp weaterType:(TYDiaryWeatherType)weatherType temperature:(NSString *)temperature;
 
 @end

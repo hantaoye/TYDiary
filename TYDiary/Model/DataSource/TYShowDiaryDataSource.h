@@ -10,4 +10,8 @@
 
 @interface TYShowDiaryDataSource : TYBaseDataSource <UICollectionViewDataSource>
 
+@property (assign, nonatomic) NSInteger year;
+
+- (void)refreshWithMonth:(NSInteger)month action:(TYDoneAction)action;
+
 @end

@@ -18,7 +18,7 @@
 @implementation TYDiaryCollectionCell
 
 + (instancetype)renderCellWithCollectionCell:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath diary:(TYDiary *)diary cell:(TYDiaryCollectionCell *)cell {
-    
+    cell.backgroundColor = [UIColor redColor];
     return cell;
 }
 

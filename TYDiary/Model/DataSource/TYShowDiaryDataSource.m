@@ -10,8 +10,11 @@
 #import "TYDiaryCollectionCell.h"
 #import "TYDiary.h"
 #import "TYDiaryDao.h"
+#import "TYDate.h"
 
 @interface TYShowDiaryDataSource ()
+
+@property (strong, nonatomic) TYDiaryDao *dao;
 
 @end
 
@@ -35,6 +38,21 @@ static NSString *__DiaryCellIdentifier = @"Cell";
     TYDiaryCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:__DiaryCellIdentifier forIndexPath:indexPath];
     cell = [TYDiaryCollectionCell renderCellWithCollectionCell:collectionView indexPath:indexPath diary:self.ids[indexPath.row] cell:cell];
     return cell;
+}
+
+#pragma mark - Action
+
+- (void)refreshWithMonth:(NSInteger)month action:(TYDoneAction)action {
+    if (!_year) {
+        _year = [TYDate currentYear];
+    }
+    [self.dao selectDiarysWithYear:_year month:month action:^(NSArray *diarys) {
+        [self.ids removeAllObjects];
+        if (diarys.count) {
+            [self.ids addObjectsFromArray:diarys];
+        }
+        return action(nil);
+    }];
 }
 
 @end

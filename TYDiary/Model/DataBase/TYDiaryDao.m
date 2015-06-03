@@ -11,7 +11,6 @@
 #import "TYAccount.h"
 #import "TYDatabaseConnector.h"
 #import "TYDiaryMapper.h"
-#import "TYDiary.h"
 
 //static NSString *TYDiarySQLAddDiary = @"replace into %@ (id, name, avatar) values (?, ?, ?);";
 
@@ -20,21 +19,21 @@ static NSString *TYDiarySQLUpdateDiary = @"update %@ set title = ?, desc = ? dia
 
 static NSString *TYDiarySQLUpdateDiaryID = @"update %@ set year = ?, month = ?, day = diary = ? where id = ?";
 
-static NSString *TYDiarySQLUpdateDiaryWithNickName = @"update %@ set name = ?, avatar = ?, nickName =? where id = ?";
-static NSString *TYDiarySQLGetDiary = @"select id, name, avatar, nickName, timestamp from %@ where id = ?";
+//static NSString *TYDiarySQLUpdateDiaryWithNickName = @"update %@ set name = ?, avatar = ?, nickName =? where id = ?";
+//static NSString *TYDiarySQLGetDiary = @"select id, name, avatar, nickName, timestamp from %@ where id = ?";
 
-static NSString *TYDiarySQLCreateDiary = @"create table if not exists %@(id integer primary key autoincrement, access_token text, userID integer, year integer, month integer, day integer, title text, diary blob)";
+static NSString *TYDiarySQLCreateDiary = @"create table if not exists %@(id integer primary key autoincrement, access_token text, userID integer, year integer, month integer, day integer, title text, weather integer, diary blob)";
 
-static NSString *TYDiarySQLAddDiaryWithName = @"replace into %@ (title, year, month, day, diary) values (?, ?, ?, ?, ?);";
-
+static NSString *TYDiarySQLAddDiaryWithName = @"replace into %@ (title, year, month, day, weather, diary) values (?, ?, ?, ?, ?, ?);";
 
 static NSString *TYDiarySQLCheckID = @"select id, diary from %@ where id = ?";
-
+static NSString *TYDiarySQLCheckWeather = @"select id, diary from %@ where weather = ?";
 static NSString *TYDiarySQLCheckDay = @"select id, diary from %@ where month = ? && day = ?";
 static NSString *TYDiarySQLCheckMonth = @"select id, diary from %@ where month = ? order by day asc";
 static NSString *TYDiarySQLCheckYear = @"select id, diary from %@ order by id asc";
 static NSString *TYDiarySQLCheckTitle = @"select id, diary from %@ where title = ?";
 static NSString *TYDiarySQLMultiGetDiarysTitle = @"select id, diary from %@ where title like %@ order by id asc";
+
 static NSString *TYDiarySQLDeleteDiaryTitle = @"delete from %@ where title = ?";
 static NSString *TYDiarySQLDeleteDiaryID = @"delete from %@ where id = ?";
 
@@ -107,6 +106,13 @@ static NSString *TYDBBaseName = @"table_diary";
     } rowMapper:[[TYDiaryMapper alloc] init] SQL:[NSString stringWithFormat:TYDiarySQLCheckID, tableName], ID];
 }
 
+- (void)selectDiaryWithWeather:(TYDiaryWeatherType)weatherType year:(NSInteger)year action:(void(^)(NSArray *diarys))action {
+    NSString *tableName = [self composeTableName:year];
+    [self.connector queryObjectsWithActon:^(NSArray *objs) {
+        action(objs);
+    } rowMapper:[[TYDiaryMapper alloc] init] SQL:[NSString stringWithFormat:TYDiarySQLCheckWeather, tableName], weatherType];
+}
+
 - (void)selectDiaryWithTitle:(NSString *)title year:(NSInteger)year action:(void(^)(TYDiary *diary))action {
     NSString *tableName = [self composeTableName:year];
     [self.connector queryObjectWithActon:^(id obj) {
@@ -133,7 +139,7 @@ static NSString *TYDBBaseName = @"table_diary";
 - (void)insertDiaryWithDiary:(TYDiary *)diary year:(NSInteger)year action:(void (^)(NSError * error))action {
     NSString *tableName = [self composeTableName:year];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:diary];
-    if ([self.connector updateWithSQL:[NSString stringWithFormat:TYDiarySQLAddDiaryWithName, tableName], diary.title, diary.year, diary.month, diary.date, data]) {
+    if ([self.connector updateWithSQL:[NSString stringWithFormat:TYDiarySQLAddDiaryWithName, tableName], diary.title, diary.year, diary.month, diary.day, diary.weatherType, data]) {
         action(nil);
     } else {
         NSError *error = [NSError errorWithDomain:@"TYDiaryDao" code:-1 userInfo:@{NSLocalizedDescriptionKey : @"insert diary fial"}];

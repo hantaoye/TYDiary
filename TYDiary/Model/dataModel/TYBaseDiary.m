@@ -21,4 +21,17 @@
     [self encode:aCoder];
 }
 
+- (instancetype)initWithTitle:(NSString *)title content:(NSString *)content imageLocalPath:(NSString *)imageLocalPath year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day wirteTimestamp:(NSString *)wirteTimestamp {
+    if (self = [super init]) {
+        _title = title;
+        _content = content;
+        _imageLocalPath = imageLocalPath;
+        _year = year;
+        _month = month;
+        _day = day;
+        _wirteTimestamp = wirteTimestamp;
+    }
+    return self;
+}
+
 @end

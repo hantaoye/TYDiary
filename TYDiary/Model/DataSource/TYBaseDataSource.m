@@ -7,12 +7,17 @@
 //
 
 #import "TYBaseDataSource.h"
+#import "TYDiary.h"
 
 @implementation TYBaseDataSource
 
 - (instancetype)init {
     if (self = [super init]) {
         _ids = [NSMutableArray array];
+        for (int idx = 0; idx < 100; idx++) {
+            TYDiary *diary = [[TYDiary alloc] init];
+            [_ids addObject:diary];
+        }
     }
     return self;
 }

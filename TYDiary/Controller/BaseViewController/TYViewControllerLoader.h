@@ -9,7 +9,7 @@
 #import "TYObject.h"
 #import <UIKit/UIKit.h>
 
-@class TYLockViewController, TYHomeViewController;
+@class TYLockViewController, TYHomeViewController, TYShowDiaryViewController;
 
 @interface TYViewControllerLoader : TYObject
 
@@ -24,5 +24,7 @@
 + (TYLockViewController *)lockViewController;
 
 + (TYHomeViewController *)homeViewController;
+
++ (TYShowDiaryViewController *)showDiaryViewController;
 
 @end

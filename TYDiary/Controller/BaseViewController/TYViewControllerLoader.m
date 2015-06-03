@@ -11,6 +11,7 @@
 
 static NSString *__lockVCIdentifier = @"TYLockViewController";
 static NSString *__homeVCIdentifier = @"TYHomeViewController";
+static NSString *__showDiaryVCIdentifier = @"TYShowDiaryViewController";
 
 @implementation TYViewControllerLoader
 
@@ -21,6 +22,10 @@ static NSString *__homeVCIdentifier = @"TYHomeViewController";
 
 + (TYHomeViewController *)homeViewController {
     return [[self diaryStroyboard] instantiateViewControllerWithIdentifier:__homeVCIdentifier];
+}
+
++ (TYShowDiaryViewController *)showDiaryViewController {
+    return [[self diaryStroyboard] instantiateViewControllerWithIdentifier:__showDiaryVCIdentifier];
 }
 
 + (UIStoryboard *)welcomeStoryboard {

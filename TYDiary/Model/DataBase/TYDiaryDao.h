@@ -7,16 +7,21 @@
 //
 
 #import "TYObject.h"
+#import "TYDiary.h"
 
-@class TYDatabaseConnector, TYDiary;
+@class TYDatabaseConnector;
 @interface TYDiaryDao : TYObject
 - (instancetype)initWithConnector:(TYDatabaseConnector *)dataBaseConnector;
 
 + (instancetype)sharedDao;
 
 - (void)selectDiarysWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day action:(void(^)(TYDiary *diary))action;
+
 - (void)selectDiarysWithYear:(NSInteger)year month:(NSInteger)month action:(void (^)(NSArray *diarys))action;
+
 - (void)selectDiarysWithYear:(NSInteger)year action:(void (^)(NSArray *diarys))action;
+
+- (void)selectDiaryWithWeather:(TYDiaryWeatherType)weatherType year:(NSInteger)year action:(void(^)(NSArray *diarys))action;
 
 - (void)selectDiaryWithID:(NSInteger)ID year:(NSInteger)year action:(void(^)(TYDiary *diary))action;
 

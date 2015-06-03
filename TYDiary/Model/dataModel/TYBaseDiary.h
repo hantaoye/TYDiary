@@ -28,4 +28,6 @@
 
 @property (assign, nonatomic) NSInteger day;
 
+- (instancetype)initWithTitle:(NSString *)title content:(NSString *)content imageLocalPath:(NSString *)imageLocalPath year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day wirteTimestamp:(NSString *)wirteTimestamp;
+
 @end

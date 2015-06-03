@@ -8,6 +8,8 @@
 
 #import "TYObject.h"
 
+typedef void (^TYDoneAction)(NSError *error);
+
 @interface TYBaseDataSource : TYObject <UITableViewDataSource, NSCoding>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

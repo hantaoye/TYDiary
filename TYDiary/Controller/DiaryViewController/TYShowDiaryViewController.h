@@ -9,4 +9,6 @@
 #import "TYBaseCollectionViewController.h"
 @interface TYShowDiaryViewController : TYBaseCollectionViewController
 
+- (void)refreshWithYear:(NSInteger)year month:(NSInteger)month;
+
 @end

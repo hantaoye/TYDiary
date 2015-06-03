@@ -8,15 +8,13 @@
 
 #import "TYHomeViewController.h"
 #import "TYHomeMonthBar.h"
-#import "TYHomeScrollView.h"
 #import "TYHomeDiaryTableView.h"
 
 
 @interface TYHomeViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *titleButton;
 @property (weak, nonatomic) IBOutlet TYHomeMonthBar *topBar;
-@property (weak, nonatomic) IBOutlet TYHomeScrollView *bottomScrollView;
-
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @end
 
 @implementation TYHomeViewController

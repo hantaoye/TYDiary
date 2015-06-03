@@ -60,11 +60,13 @@
 		67D5976C1B0E3414007D1916 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D5976B1B0E3414007D1916 /* libz.dylib */; };
 		67D597771B0E36CE007D1916 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67D597741B0E36CE007D1916 /* LaunchScreen.storyboard */; };
 		67D597781B0E36CE007D1916 /* TYLaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D597761B0E36CE007D1916 /* TYLaunchScreenViewController.m */; };
+		67DD2A7A1B1D563C008AC720 /* TYSettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67DD2A791B1D563C008AC720 /* TYSettingViewController.storyboard */; };
+		67DD2A7E1B1D812E008AC720 /* TYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD2A7D1B1D812E008AC720 /* TYDate.m */; };
+		67DD2A811B1DA226008AC720 /* TYPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DD2A801B1DA226008AC720 /* TYPageViewController.m */; };
 		67EB5FF31B136FEA0060AE36 /* TYBaseDiaryController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EB5FEC1B136FEA0060AE36 /* TYBaseDiaryController.storyboard */; };
 		67EB5FF41B136FEA0060AE36 /* TYFindDirayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EB5FEE1B136FEA0060AE36 /* TYFindDirayController.m */; };
 		67EB5FF51B136FEA0060AE36 /* TYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EB5FF01B136FEA0060AE36 /* TYHomeViewController.m */; };
 		67EB5FF91B1370AF0060AE36 /* TYHomeMonthBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EB5FF81B1370AF0060AE36 /* TYHomeMonthBar.m */; };
-		67EB5FFC1B1371430060AE36 /* TYHomeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EB5FFB1B1371430060AE36 /* TYHomeScrollView.m */; };
 		67EB5FFF1B13715F0060AE36 /* TYHomeDiaryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EB5FFE1B13715F0060AE36 /* TYHomeDiaryTableView.m */; };
 		B967BB495F8F2876D6048F88 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB5B26ECB2FCFC6EED95724 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -186,6 +188,11 @@
 		67D597741B0E36CE007D1916 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67D597751B0E36CE007D1916 /* TYLaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLaunchScreenViewController.h; sourceTree = "<group>"; };
 		67D597761B0E36CE007D1916 /* TYLaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLaunchScreenViewController.m; sourceTree = "<group>"; };
+		67DD2A791B1D563C008AC720 /* TYSettingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TYSettingViewController.storyboard; sourceTree = "<group>"; };
+		67DD2A7C1B1D812E008AC720 /* TYDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDate.h; sourceTree = "<group>"; };
+		67DD2A7D1B1D812E008AC720 /* TYDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDate.m; sourceTree = "<group>"; };
+		67DD2A7F1B1DA226008AC720 /* TYPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPageViewController.h; sourceTree = "<group>"; };
+		67DD2A801B1DA226008AC720 /* TYPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPageViewController.m; sourceTree = "<group>"; };
 		67EB5FEC1B136FEA0060AE36 /* TYBaseDiaryController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TYBaseDiaryController.storyboard; sourceTree = "<group>"; };
 		67EB5FED1B136FEA0060AE36 /* TYFindDirayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYFindDirayController.h; sourceTree = "<group>"; };
 		67EB5FEE1B136FEA0060AE36 /* TYFindDirayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYFindDirayController.m; sourceTree = "<group>"; };
@@ -193,8 +200,6 @@
 		67EB5FF01B136FEA0060AE36 /* TYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHomeViewController.m; sourceTree = "<group>"; };
 		67EB5FF71B1370AF0060AE36 /* TYHomeMonthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHomeMonthBar.h; sourceTree = "<group>"; };
 		67EB5FF81B1370AF0060AE36 /* TYHomeMonthBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHomeMonthBar.m; sourceTree = "<group>"; };
-		67EB5FFA1B1371430060AE36 /* TYHomeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHomeScrollView.h; sourceTree = "<group>"; };
-		67EB5FFB1B1371430060AE36 /* TYHomeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHomeScrollView.m; sourceTree = "<group>"; };
 		67EB5FFD1B13715F0060AE36 /* TYHomeDiaryTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHomeDiaryTableView.h; sourceTree = "<group>"; };
 		67EB5FFE1B13715F0060AE36 /* TYHomeDiaryTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHomeDiaryTableView.m; sourceTree = "<group>"; };
 		6CF75142A19FAA0B17AFF434 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -439,6 +444,8 @@
 				670873EC1B025B3F0068B214 /* TYViewControllerHelp.m */,
 				670873ED1B025B3F0068B214 /* TYWriteHelp.h */,
 				670873EE1B025B3F0068B214 /* TYWriteHelp.m */,
+				67DD2A7C1B1D812E008AC720 /* TYDate.h */,
+				67DD2A7D1B1D812E008AC720 /* TYDate.m */,
 			);
 			path = Assist;
 			sourceTree = "<group>";
@@ -505,6 +512,7 @@
 		678A790A1B19FDB8002B866E /* SettingViewController */ = {
 			isa = PBXGroup;
 			children = (
+				67DD2A791B1D563C008AC720 /* TYSettingViewController.storyboard */,
 				678A790B1B19FDD5002B866E /* TYSettingViewController.h */,
 				678A790C1B19FDD5002B866E /* TYSettingViewController.m */,
 			);
@@ -580,8 +588,6 @@
 			children = (
 				67EB5FF71B1370AF0060AE36 /* TYHomeMonthBar.h */,
 				67EB5FF81B1370AF0060AE36 /* TYHomeMonthBar.m */,
-				67EB5FFA1B1371430060AE36 /* TYHomeScrollView.h */,
-				67EB5FFB1B1371430060AE36 /* TYHomeScrollView.m */,
 				67EB5FFD1B13715F0060AE36 /* TYHomeDiaryTableView.h */,
 				67EB5FFE1B13715F0060AE36 /* TYHomeDiaryTableView.m */,
 			);
@@ -594,10 +600,12 @@
 				67EB5FEC1B136FEA0060AE36 /* TYBaseDiaryController.storyboard */,
 				67EB5FEF1B136FEA0060AE36 /* TYHomeViewController.h */,
 				67EB5FF01B136FEA0060AE36 /* TYHomeViewController.m */,
-				67EB5FED1B136FEA0060AE36 /* TYFindDirayController.h */,
-				67EB5FEE1B136FEA0060AE36 /* TYFindDirayController.m */,
+				67DD2A7F1B1DA226008AC720 /* TYPageViewController.h */,
+				67DD2A801B1DA226008AC720 /* TYPageViewController.m */,
 				678A790E1B1A0A72002B866E /* TYShowDiaryViewController.h */,
 				678A790F1B1A0A72002B866E /* TYShowDiaryViewController.m */,
+				67EB5FED1B136FEA0060AE36 /* TYFindDirayController.h */,
+				67EB5FEE1B136FEA0060AE36 /* TYFindDirayController.m */,
 			);
 			path = DiaryViewController;
 			sourceTree = "<group>";
@@ -700,6 +708,7 @@
 				67D597771B0E36CE007D1916 /* LaunchScreen.storyboard in Resources */,
 				670873971B02559C0068B214 /* Images.xcassets in Resources */,
 				6708740B1B025F1E0068B214 /* RSProgressHUD.bundle in Resources */,
+				67DD2A7A1B1D563C008AC720 /* TYSettingViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,7 +762,6 @@
 				678A79271B1A13D4002B866E /* TYBaseDataSource.m in Sources */,
 				673B9B6B1B1599CA005BE4D3 /* TYLockView.m in Sources */,
 				6708740C1B025F1E0068B214 /* RSProgressHUD.m in Sources */,
-				67EB5FFC1B1371430060AE36 /* TYHomeScrollView.m in Sources */,
 				670873FB1B025B960068B214 /* TYAccountAccess.m in Sources */,
 				670873CA1B0259710068B214 /* TYDiary.m in Sources */,
 				673B9B611B159477005BE4D3 /* TYViewControllerLoader.m in Sources */,
@@ -773,9 +781,11 @@
 				670873DB1B025A210068B214 /* TYDiaryDao.m in Sources */,
 				670873F41B025B3F0068B214 /* TYWriteHelp.m in Sources */,
 				673B9B5E1B159477005BE4D3 /* TYBaseNavigationController.m in Sources */,
+				67DD2A7E1B1D812E008AC720 /* TYDate.m in Sources */,
 				67D597691B0E2F36007D1916 /* UIImage+Resize.m in Sources */,
 				670873DD1B025A210068B214 /* TYRowMapper.m in Sources */,
 				670873DA1B025A210068B214 /* TYDatabaseConnector.m in Sources */,
+				67DD2A811B1DA226008AC720 /* TYPageViewController.m in Sources */,
 				678A79101B1A0A72002B866E /* TYShowDiaryViewController.m in Sources */,
 				673B9B5F1B159477005BE4D3 /* TYBaseTableViewController.m in Sources */,
 				670873D91B025A210068B214 /* TYAccountMapper.m in Sources */,
